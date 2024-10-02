@@ -1,0 +1,83 @@
+# Visual Studio files
+.vscode/
+.vscode/*
+.vs
+
+# Unreal Engine Intermediate and Binaries
+Binaries/
+
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.VC.opendb
+Content/Assets/*
+
+# Ignore all Build folders except Build itself
+Build/**/
+!Build/
+
+# Ignore Plugins intermediate files
+Plugins/*/Intermediate/
+Plugins/*/Binaries/
+Plugins/*/DerivedDataCache/
+Plugins/*/Saved/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userosscache
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Linux system files
+*~ 
+
+# Ignore Windows system files
+Thumbs.db
+
+# Ignore node_modules
+node_modules/
+
+# Ignore Python virtual environments
+venv/
+
+# Ignore backup and autosave files
+__pycache__/
+*.bak
+*.tmp
+*.temp
+*.log
+
+# Ignore additional temporary files
+*.swp
+*.swo
+
+# Ignore configuration files
+config.ini
+local.properties
+
+# Ignore Unreal Engine log files
+*.log
+
+# Ignore Unreal Engine build files
+Build/Android
+Build/HTML5
+Build/IOS
+Build/Linux
+Build/Lumin
+Build/Mac
+Build/PS4
+Build/PS5
+Build/Switch
+Build/TVOS
+Build/Win32
+Build/Win64
+Build/XboxOne
+Build/Windows
+Build/HoloLens
