@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Components/WidgetComponent.h"
 
 // Sets default values
 ABlasterChasracter::ABlasterChasracter()
@@ -24,6 +25,10 @@ ABlasterChasracter::ABlasterChasracter()
 	bUseControllerRotationYaw = false;
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
+
+
+	OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
+	OverheadWidget->SetupAttachment(RootComponent);
 
 }
 
@@ -76,6 +81,10 @@ void ABlasterChasracter::Look(const FInputActionValue& Value)
 	}
 
 }
+void ABlasterChasracter::Jump(const FInputActionValue& Value)
+{
+	Super::Jump();
+}
 //end inputs
 
 
@@ -97,6 +106,8 @@ void ABlasterChasracter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	{
 		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Triggered, this, &ABlasterChasracter::Move);
 		EnhancedInputComponent->BindAction(IA_Look, ETriggerEvent::Triggered, this, &ABlasterChasracter::Look);
+		EnhancedInputComponent->BindAction(IA_Jump, ETriggerEvent::Triggered, this, &ABlasterChasracter::Jump);
+
 	}
 }
 

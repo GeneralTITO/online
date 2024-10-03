@@ -43,11 +43,19 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	class UInputAction* IA_Look;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	class UInputAction* IA_Jump;
 	// end inputs
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class UWidgetComponent* OverheadWidget;
 
 public:	
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+	void Jump(const FInputActionValue& Value);
+
 
 };
